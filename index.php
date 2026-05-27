@@ -1,4 +1,3 @@
-
 <?php
-echo "Hello World";
+echo "<h1>Welcome to Blog App</h1>";
 ?>
