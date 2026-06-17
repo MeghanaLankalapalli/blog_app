@@ -24,6 +24,9 @@ if(isset($_POST['login'])){
 <html>
 <head>
     <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+href="../assets/style.css">
 </head>
 <body>
 <h2>Login Page</h2>
@@ -44,4 +47,3 @@ if(isset($_POST['login'])){
 </form>
 </body>
 </html>
-<link rel="stylesheet" href="../assets/style.css">

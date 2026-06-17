@@ -16,6 +16,8 @@ if(isset($_POST['submit'])){
 <html>
 <head>
     <title>Create Post</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <h2>Add New Post</h2>
@@ -28,4 +30,3 @@ if(isset($_POST['submit'])){
 </form>
 </body>
 </html>
-<link rel="stylesheet" href="../assets/style.css">
