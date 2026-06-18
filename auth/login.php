@@ -4,12 +4,20 @@ include "../config/db.php";
 if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $sql = "SELECT * FROM users WHERE username='$username'";
-    $result = mysqli_query($conn, $sql);
+    $stmt = $conn->prepare(
+"SELECT * FROM users WHERE username=?"
+);
+
+$stmt->bind_param("s",$username);
+
+$stmt->execute();
+
+$result = $stmt->get_result();
     $user = mysqli_fetch_assoc($result);
     if($user){
         if(password_verify($password, $user['password'])){
             $_SESSION['username'] = $username;
+            $_SESSION['role'] = $user['role'];
             header("Location: ../posts/index.php");
             exit();
         } else {

@@ -36,7 +36,8 @@ $result = mysqli_query($conn, $sql);
 <html>
 <head>
     <title>All Posts</title>
-
+    <p>Welcome <?php echo $_SESSION['username']; ?></p>
+<p>Role: <?php echo $_SESSION['role']; ?></p>
     <link rel="stylesheet" href="../assets/style.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -73,9 +74,16 @@ while($row = mysqli_fetch_assoc($result)) {
         Edit
     </a>
     <br><br>
-    <a href="delete.php?id=<?php echo $row['id']; ?>">
-        Delete
-    </a>
+    <?php
+if($_SESSION['role'] == "admin")
+{
+?>
+<a href="delete.php?id=<?php echo $row['id']; ?>">
+Delete
+</a>
+<?php
+}
+?>
     <hr>
 <?php
 }
